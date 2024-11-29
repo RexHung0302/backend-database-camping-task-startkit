@@ -98,116 +98,116 @@
     -- 2. `王小明` 購買 `21 堂組合包方案`
     -- 3. `好野人` 購買 `14 堂組合包方案`
 
-insert
-	into
-	"CREDIT_PURCHASE"(
-    user_id,
-	credit_package_id,
-	purchased_credits,
-	price_paid
-  )
-values(
-    (
-select
-	id
-from
-	"USER"
-where
-	name = '王小明'
-    ),
-    (
-select
-	id
-from
-	"CREDIT_PACKAGE"
-where
-	name = '14 堂組合包方案'
-    ),
-    (
-select
-	credit_amount
-from
-	"CREDIT_PACKAGE"
-where
-	name = '14 堂組合包方案'
-    ),
-    (
-select
-	price
-from
-	"CREDIT_PACKAGE"
-where
-	name = '14 堂組合包方案'
-    )
-  ),
-  (
-    (
-select
-	id
-from
-	"USER"
-where
-	name = '王小明'
-    ),
-    (
-select
-	id
-from
-	"CREDIT_PACKAGE"
-where
-	name = '21 堂組合包方案'
-    ),
-    (
-select
-	credit_amount
-from
-	"CREDIT_PACKAGE"
-where
-	name = '21 堂組合包方案'
-    ),
-    (
-select
-	price
-from
-	"CREDIT_PACKAGE"
-where
-	name = '21 堂組合包方案'
-    )
-  ),
-  (
-    (
-select
-	id
-from
-	"USER"
-where
-	name = '好野人'
-    ),
-    (
-select
-	id
-from
-	"CREDIT_PACKAGE"
-where
-	name = '14 堂組合包方案'
-    ),
-    (
-select
-	credit_amount
-from
-	"CREDIT_PACKAGE"
-where
-	name = '14 堂組合包方案'
-    ),
-    (
-select
-	price
-from
-	"CREDIT_PACKAGE"
-where
-	name = '14 堂組合包方案'
-    )
-  );
+-- insert
+-- 	into
+-- 	"CREDIT_PURCHASE"(
+--     user_id,
+-- 	credit_package_id,
+-- 	purchased_credits,
+-- 	price_paid
+--   )
+-- values(
+--     (
+-- select
+-- 	id
+-- from
+-- 	"USER"
+-- where
+-- 	name = '王小明'
+--     ),
+--     (
+-- select
+-- 	id
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '14 堂組合包方案'
+--     ),
+--     (
+-- select
+-- 	credit_amount
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '14 堂組合包方案'
+--     ),
+--     (
+-- select
+-- 	price
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '14 堂組合包方案'
+--     )
+--   ),
+--   (
+--     (
+-- select
+-- 	id
+-- from
+-- 	"USER"
+-- where
+-- 	name = '王小明'
+--     ),
+--     (
+-- select
+-- 	id
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '21 堂組合包方案'
+--     ),
+--     (
+-- select
+-- 	credit_amount
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '21 堂組合包方案'
+--     ),
+--     (
+-- select
+-- 	price
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '21 堂組合包方案'
+--     )
+--   ),
+--   (
+--     (
+-- select
+-- 	id
+-- from
+-- 	"USER"
+-- where
+-- 	name = '好野人'
+--     ),
+--     (
+-- select
+-- 	id
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '14 堂組合包方案'
+--     ),
+--     (
+-- select
+-- 	credit_amount
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '14 堂組合包方案'
+--     ),
+--     (
+-- select
+-- 	price
+-- from
+-- 	"CREDIT_PACKAGE"
+-- where
+-- 	name = '14 堂組合包方案'
+--     )
+--   );
 
 -- ████████  █████   █    ████   
 --   █ █   ██    █  █         ██ 
@@ -221,174 +221,174 @@ where
     -- 2. 將用戶`肌肉棒子`新增為教練，並且年資設定為2年
     -- 3. 將用戶`Q太郎`新增為教練，並且年資設定為2年
 
--- INSERT INTO
---   "COACH"(user_id, experience_years)
--- VALUES
---   (
---     (
---       SELECT
---         id
---       FROM
---         "USER"
---       WHERE
---         email = 'lee2000@hexschooltest.io'
---     ),
---     2
---   ),
---   (
---     (
---       SELECT
---         id
---       FROM
---         "USER"
---       WHERE
---         email = 'muscle@hexschooltest.io'
---     ),
---     2
---   ),
---   (
---     (
---       SELECT
---         id
---       FROM
---         "USER"
---       WHERE
---         email = 'starplatinum@hexschooltest.io'
---     ),
---     2
---   );
+INSERT INTO
+  "COACH"(user_id, experience_years)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        "USER"
+      WHERE
+        email = 'lee2000@hexschooltest.io'
+    ),
+    2
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        "USER"
+      WHERE
+        email = 'muscle@hexschooltest.io'
+    ),
+    2
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        "USER"
+      WHERE
+        email = 'starplatinum@hexschooltest.io'
+    ),
+    2
+  );
 
 -- 3-2. 新增：承1，為三名教練新增專長資料至 `COACH_LINK_SKILL` ，資料需求如下：
     -- 1. 所有教練都有 `重訓` 專長
     -- 2. 教練`肌肉棒子` 需要有 `瑜伽` 專長
     -- 3. 教練`Q太郎` 需要有 `有氧運動` 與 `復健訓練` 專長
 
--- insert
--- 	into
--- 	"COACH_LINK_SKILL"(coach_id,
--- 	skill_id)
--- select
--- 	id,
--- 	(
--- 	select
--- 		id
--- 	from
--- 		"SKILL"
--- 	where
--- 		name = '重訓'
--- )
--- from
--- 	"COACH";
+insert
+	into
+	"COACH_LINK_SKILL"(coach_id,
+	skill_id)
+select
+	id,
+	(
+	select
+		id
+	from
+		"SKILL"
+	where
+		name = '重訓'
+)
+from
+	"COACH";
 
--- INSERT INTO "COACH_LINK_SKILL"(coach_id, skill_id)
--- VALUES(
---     (
---         SELECT
---             "COACH".id
---         FROM
---             "COACH"
---             INNER JOIN "USER" ON "COACH".user_id = "USER".id
---         WHERE
---             "USER".name = '肌肉棒子'
---     ),
---     (
---         SELECT
---             id
---         FROM
---             "SKILL"
---         WHERE
---             name = '瑜伽'
---     )
--- );
+INSERT INTO "COACH_LINK_SKILL"(coach_id, skill_id)
+VALUES(
+    (
+        SELECT
+            "COACH".id
+        FROM
+            "COACH"
+            INNER JOIN "USER" ON "COACH".user_id = "USER".id
+        WHERE
+            "USER".name = '肌肉棒子'
+    ),
+    (
+        SELECT
+            id
+        FROM
+            "SKILL"
+        WHERE
+            name = '瑜伽'
+    )
+);
 
--- INSERT INTO "COACH_LINK_SKILL"(coach_id, skill_id)
--- VALUES(
---     (
---         SELECT
---             "COACH".id
---         FROM
---             "COACH"
---             INNER JOIN "USER" ON "COACH".user_id = "USER".id
---         WHERE
---             "USER".name = 'Q太郎'
---     ),
---     (
---         SELECT
---             id
---         FROM
---             "SKILL"
---         WHERE
---             name = '有氧運動'
---     )
--- ),
--- (
---     (
---         SELECT
---             "COACH".id
---         FROM
---             "COACH"
---             INNER JOIN "USER" ON "COACH".user_id = "USER".id
---         WHERE
---             "USER".name = 'Q太郎'
---     ),
---     (
---         SELECT
---             id
---         FROM
---             "SKILL"
---         WHERE
---             name = '復健訓練'
---     )
--- );
+INSERT INTO "COACH_LINK_SKILL"(coach_id, skill_id)
+VALUES(
+    (
+        SELECT
+            "COACH".id
+        FROM
+            "COACH"
+            INNER JOIN "USER" ON "COACH".user_id = "USER".id
+        WHERE
+            "USER".name = 'Q太郎'
+    ),
+    (
+        SELECT
+            id
+        FROM
+            "SKILL"
+        WHERE
+            name = '有氧運動'
+    )
+),
+(
+    (
+        SELECT
+            "COACH".id
+        FROM
+            "COACH"
+            INNER JOIN "USER" ON "COACH".user_id = "USER".id
+        WHERE
+            "USER".name = 'Q太郎'
+    ),
+    (
+        SELECT
+            id
+        FROM
+            "SKILL"
+        WHERE
+            name = '復健訓練'
+    )
+);
 
 -- 3-3 修改：更新教練的經驗年數，資料需求如下：
     -- 1. 教練`肌肉棒子` 的經驗年數為3年
     -- 2. 教練`Q太郎` 的經驗年數為5年
 
--- update
--- 	"COACH"
--- set
--- 	experience_years = 3
--- where
--- 	"COACH".id = (
--- 	select
--- 			"sub_COACH".id
--- 	from
--- 			"USER" as "sub_USER"
--- 	inner join "COACH" as "sub_COACH" on
--- 		"sub_USER".id = "sub_COACH".user_id
--- 	where
--- 		"sub_USER".name = '肌肉棒子'
--- 	);
+update
+	"COACH"
+set
+	experience_years = 3
+where
+	"COACH".id = (
+	select
+			"sub_COACH".id
+	from
+			"USER" as "sub_USER"
+	inner join "COACH" as "sub_COACH" on
+		"sub_USER".id = "sub_COACH".user_id
+	where
+		"sub_USER".name = '肌肉棒子'
+	);
 
--- update
--- 	"COACH"
--- set
--- 	experience_years = 5
--- where
--- 	"COACH".id = (
--- 	select
--- 			"sub_COACH".id
--- 	from
--- 			"USER" as "sub_USER"
--- 	inner join "COACH" as "sub_COACH" on
--- 		"sub_USER".id = "sub_COACH".user_id
--- 	where
--- 		"sub_USER".name = 'Q太郎'
--- 	);
+update
+	"COACH"
+set
+	experience_years = 5
+where
+	"COACH".id = (
+	select
+			"sub_COACH".id
+	from
+			"USER" as "sub_USER"
+	inner join "COACH" as "sub_COACH" on
+		"sub_USER".id = "sub_COACH".user_id
+	where
+		"sub_USER".name = 'Q太郎'
+	);
 
 -- 3-4 刪除：新增一個專長 空中瑜伽 至 SKILL 資料表，之後刪除此專長。
 
--- insert
--- 	into
--- 	"SKILL"(name)
--- values("空中瑜伽");
+insert
+	into
+	"SKILL"(name)
+values("空中瑜伽");
 
--- delete
--- from
--- 	"SKILL"
--- where
--- 	name = '空中瑜伽';
+delete
+from
+	"SKILL"
+where
+	name = '空中瑜伽';
 
 
 --  ████████  █████   █    █   █ 

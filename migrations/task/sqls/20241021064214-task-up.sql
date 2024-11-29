@@ -98,7 +98,7 @@
     -- 2. `王小明` 購買 `21 堂組合包方案`
     -- 3. `好野人` 購買 `14 堂組合包方案`
 
-insert into "CREDIT_PURCHASE"(
+INSERT INTO "CREDIT_PURCHASE"(
   user_id,
   credit_package_id,
   purchased_credits,
@@ -106,103 +106,103 @@ insert into "CREDIT_PURCHASE"(
 )
 values(
   (
-    select
+    SELECT
       id
-    from
+    FROM
       "USER"
-    where
+    WHERE
       name = '王小明'
   ),
   (
-    select
+    SELECT
       id
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '14 堂組合包方案'
   ),
   (
-    select
+    SELECT
       credit_amount
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '14 堂組合包方案'
   ),
   (
-    select
+    SELECT
       price
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '14 堂組合包方案'
   )
 ),
 (
   (
-    select
+    SELECT
       id
-    from
+    FROM
       "USER"
-    where
+    WHERE
       name = '王小明'
   ),
   (
-    select
+    SELECT
       id
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '21 堂組合包方案'
   ),
   (
-    select
+    SELECT
       credit_amount
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '21 堂組合包方案'
   ),
   (
-    select
+    SELECT
       price
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '21 堂組合包方案'
   )
 ),
 (
   (
-    select
+    SELECT
       id
-    from
+    FROM
       "USER"
-    where
+    WHERE
       name = '好野人'
   ),
   (
-    select
+    SELECT
       id
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '14 堂組合包方案'
   ),
   (
-    select
+    SELECT
       credit_amount
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '14 堂組合包方案'
   ),
   (
-    select
+    SELECT
       price
-    from
+    FROM
       "CREDIT_PACKAGE"
-    where
+    WHERE
       name = '14 堂組合包方案'
   )
 );

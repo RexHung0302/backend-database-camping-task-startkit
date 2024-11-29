@@ -53,7 +53,7 @@ SET
 WHERE
   name IN('李燕容', '肌肉棒子', 'Q太郎');
 
-1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
+-- 1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
 
 DELETE FROM
   "USER"
@@ -67,7 +67,7 @@ SELECT
 FROM
   "USER";
 
-1-5 查詢：取得 USER 資料表所有用戶資料，並列出前 3 筆（提示：使用limit語法）
+-- 1-5 查詢：取得 USER 資料表所有用戶資料，並列出前 3 筆（提示：使用limit語法）
 
 SELECT
   *
@@ -440,7 +440,7 @@ where
     '2024-11-25 16:00:00',
     10,
     'https://test-meeting.test.io'
-)
+);
 
 
 -- ████████  █████   █    █████ 
@@ -722,4 +722,4 @@ from
 	"COURSE_BOOKING"
 where
     created_at between '2024-10-31' and '2024-12-01'
-	and status notnull
+	and status notnull;
